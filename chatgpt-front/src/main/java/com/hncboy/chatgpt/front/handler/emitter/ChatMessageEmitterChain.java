@@ -4,6 +4,7 @@ import cn.hutool.extra.spring.SpringUtil;
 import com.hncboy.chatgpt.base.config.ChatConfig;
 import com.hncboy.chatgpt.base.enums.ApiTypeEnum;
 import com.hncboy.chatgpt.front.domain.request.ChatProcessRequest;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter;
 
 /**
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter
 public class ChatMessageEmitterChain extends AbstractResponseEmitterChain {
 
     @Override
+    @Async
     public void doChain(ChatProcessRequest request, ResponseBodyEmitter emitter) {
         ApiTypeEnum apiTypeEnum = SpringUtil.getBean(ChatConfig.class).getApiTypeEnum();
         ResponseEmitter responseEmitter;

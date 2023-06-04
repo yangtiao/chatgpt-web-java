@@ -116,7 +116,10 @@ public class EmailAbstractRegisterStrategy extends AbstractRegisterTypeStrategy 
         // TODO 根据 ip 进行限流
 
         // 发送邮箱验证信息
-        emailService.sendForVerifyCode(request.getIdentity(), emailVerifyCodeDO.getVerifyCode());
+//        emailService.sendForVerifyCode(request.getIdentity(), emailVerifyCodeDO.getVerifyCode());
+
+        // 省去发送，直接校验通过
+        checkVerifyCode(null, emailVerifyCodeDO.getVerifyCode());
     }
 
     @Override

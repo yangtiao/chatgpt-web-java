@@ -36,11 +36,11 @@ public class RegisterFrontUserForEmailRequest {
     private String password;
 
     @Schema(title = "图形验证码会话 ID")
-    @NotNull(message = "验证码会话 ID 不能为空")
+//    @NotNull(message = "验证码会话 ID 不能为空")
     private String picCodeSessionId;
 
     @Schema(title = "图片验证码")
-    @NotNull(message = "图片验证码不能为空")
+//    @NotNull(message = "图片验证码不能为空")
     private String picVerificationCode;
 
     private FrontUserRegisterTypeEnum registerType = FrontUserRegisterTypeEnum.EMAIL;

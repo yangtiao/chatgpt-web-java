@@ -42,7 +42,7 @@ public class FrontUserController {
 
     @Operation(summary = "邮箱注册")
     @PostMapping("/register/email")
-    public R<Void> registerFrontUser(@Validated @RequestBody RegisterFrontUserForEmailRequest request) {
+    public R<Void> registerFrontUser(@RequestBody RegisterFrontUserForEmailRequest request) {
         frontUserService.register(request);
         return R.success("注册成功");
     }
