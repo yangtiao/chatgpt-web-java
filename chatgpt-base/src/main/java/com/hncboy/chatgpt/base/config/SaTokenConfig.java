@@ -26,7 +26,7 @@ public class SaTokenConfig implements WebMvcConfigurer {
                     // 管理端接口都必须管理端登录
                     SaRouter.match("/admin/**").check(r -> StpAdminUtil.checkLogin());
                     // 非管理端接口都必须 front 用户登录
-                    SaRouter.notMatch("/admin/**").check(r -> StpUtil.checkLogin());
+//                    SaRouter.notMatch("/admin/**").check(r -> StpUtil.checkLogin());
                 }))
                 // 放行管理端登录接口
                 .excludePathPatterns("/admin/sys_user/login")
